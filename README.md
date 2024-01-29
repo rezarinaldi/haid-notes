@@ -1,6 +1,6 @@
-# 📑 Notes App
+# 📑 Haid Notes
 
-Notes app for assignment week 4 - bootcamp [devscale indonesia](https://devscale.id).
+Haid notes for assignment week 4 - bootcamp [devscale indonesia](https://devscale.id).
 
 ## Screenshot
 
