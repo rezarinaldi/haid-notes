@@ -4,7 +4,7 @@ Haid notes for assignment week 4 - bootcamp [devscale indonesia](https://devscal
 
 ## Screenshot
 
-_Soon_
+![screenshot](public/screenshot.png)
 
 ## Author
 
