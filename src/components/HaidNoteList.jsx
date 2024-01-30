@@ -1,4 +1,5 @@
 import { CreateHaidNotes } from "./CreateHaidNotes";
+import { Footer } from "./Footer";
 import { HaidNotes } from "./HaidNotes";
 import { Header } from "./Header";
 
@@ -12,6 +13,7 @@ export const HaidNoteList = ({ data }) => {
           return <HaidNotes key={note._id} note={note} />;
         })}
       </section>
+      <Footer />
     </div>
   );
 };
