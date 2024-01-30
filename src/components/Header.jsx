@@ -6,11 +6,12 @@ export const Header = () => {
       </h1>
       <p className="text-white">Write your notes for haid here. 🧕</p>
       <p className="text-white mt-5">
-        KD ke-2 keluar di atas hari ke-15 (Metode penyempurna suci)
+        🩸 Keluar darah ke-2 keluar di atas hari ke-15 (Metode penyempurna
+        suci).
       </p>
       <p className="text-white">
-        KD ke-2 keluar sebelum hari ke 15 dan berlanjut hingga lebih dari 15
-        (Dikembalikan ke adat haid dan adat sucinya)
+        🩸 Keluar darah ke-2 keluar sebelum hari ke-15 dan berlanjut hingga
+        lebih dari 15 (Dikembalikan ke adat haid dan adat sucinya).
       </p>
     </header>
   );
