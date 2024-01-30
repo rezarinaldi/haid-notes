@@ -1,4 +1,3 @@
-import { CreateHaidNotes } from "@/components/CreateHaidNotes";
 import { HaidNoteList } from "@/components/HaidNoteList";
 
 export const dynamic = "force-dynamic"; // bypass si cache
@@ -12,10 +11,5 @@ async function getHaidData() {
 export default async function Home() {
   const { data } = await getHaidData();
 
-  return (
-    <main className="max-w-xl m-auto space-y-12">
-      <CreateHaidNotes />
-      <HaidNoteList data={data} />
-    </main>
-  );
+  return <HaidNoteList data={data} />;
 }

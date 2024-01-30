@@ -37,38 +37,44 @@ export const CreateHaidNotes = () => {
   }
 
   return (
-    <main className="space-y-2">
-      <h3>Create Haid Notes</h3>
+    <div className="card m-10">
+      <h3 className="text-center text-white font-semibold text-2xl">
+        🌸 Create Haid Notes
+      </h3>
       <Input
-        placeholder="KD 1"
+        label="Keluar Darah Pertama"
+        placeholder="0"
         value={haid_1}
         type="number"
         onChange={(e) => setHaidSatu(e.target.value)}
       />
       <Input
-        placeholder="Bersih"
+        label="Bersih"
+        placeholder="0"
         value={suci}
         type="number"
         onChange={(e) => setSuci(e.target.value)}
       />
       <Input
-        placeholder="KD 2"
+        label="Keluar Darah Kedua"
+        placeholder="0"
         value={haid_2}
         type="number"
         onChange={(e) => setHaidDua(e.target.value)}
       />
       <Textarea
-        placeholder="Keterangan"
+        label="Keterangan"
         value={keterangan}
         onChange={(e) => setKeterangan(e.target.value)}
       />
       <Button
-        color="secondary"
+        color="danger"
         isLoading={loading}
         onPress={handleCreateHaidNotes}
+        className="w-full"
       >
-        Create
+        ✅ Create
       </Button>
-    </main>
+    </div>
   );
 };

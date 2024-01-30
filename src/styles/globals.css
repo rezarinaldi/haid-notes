@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-pink-200;
+  }
+  .card {
+    @apply p-6 backdrop-blur-2xl bg-rose-300 border border-white flex flex-col rounded-md gap-3 mb-8;
+  }
+}
