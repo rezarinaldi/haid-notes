@@ -65,25 +65,25 @@ export const HaidNotes = ({ note }) => {
             📝 Update Haid Notes
           </h3>
           <Input
-            placeholder="KD 1"
+            label="Keluar Darah Pertama"
             value={haid_1}
             type="number"
             onChange={(e) => setHaidSatu(e.target.value)}
           />
           <Input
-            placeholder="Bersih"
+            label="Bersih"
             value={suci}
             type="number"
             onChange={(e) => setSuci(e.target.value)}
           />
           <Input
-            placeholder="KD 2"
+            label="Keluar Darah Kedua"
             value={haid_2}
             type="number"
             onChange={(e) => setHaidDua(e.target.value)}
           />
           <Textarea
-            placeholder="Keterangan"
+            label="Keterangan"
             value={keterangan}
             onChange={(e) => setKeterangan(e.target.value)}
           />

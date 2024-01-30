@@ -64,6 +64,7 @@ export const CreateHaidNotes = () => {
       />
       <Textarea
         label="Keterangan"
+        placeholder="Istihadoh 0 dan Haid 0 atau Istihadoh Semua"
         value={keterangan}
         onChange={(e) => setKeterangan(e.target.value)}
       />
