@@ -45,6 +45,8 @@ export const HaidNotes = ({ note }) => {
   }
 
   async function handleDeleteHaidNotes() {
+    setLoading(true);
+
     const res = await fetch("https://v1.appbackend.io/v1/rows/TyLhTJDyYOIA", {
       method: "DELETE",
       headers: {
@@ -54,6 +56,7 @@ export const HaidNotes = ({ note }) => {
     });
     const data = await res.json();
     router.refresh();
+    setLoading(false);
     toast.success("Catatan haid berhasil dihapus.");
   }
 
@@ -89,13 +92,17 @@ export const HaidNotes = ({ note }) => {
           />
           <div className="flex gap-3 justify-end">
             <Button
-              onPress={handleUpdateHaidNotes}
+              onClick={handleUpdateHaidNotes}
               color="primary"
               isLoading={loading}
             >
               🔄 Update
             </Button>
-            <Button onPress={() => setEditMode(false)} color="default">
+            <Button
+              onClick={() => setEditMode(false)}
+              color="default"
+              isLoading={loading}
+            >
               🔙 Cancel
             </Button>
           </div>
@@ -116,11 +123,11 @@ export const HaidNotes = ({ note }) => {
           </p>
           <div className="flex gap-3 justify-end">
             {/* Button Edit */}
-            <Button onPress={() => setEditMode(true)} color="primary">
+            <Button onClick={() => setEditMode(true)} color="primary">
               🔄 Edit
             </Button>
             {/* Button Delete */}
-            <Button onPress={onOpen} color="secondary">
+            <Button onClick={onOpen} color="secondary">
               ❎ Delete
             </Button>
             <Modal
@@ -158,10 +165,19 @@ export const HaidNotes = ({ note }) => {
                       <p>Are you sure you want to delete this note?</p>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="danger" variant="light" onPress={onClose}>
+                      <Button
+                        color="danger"
+                        variant="light"
+                        onClick={onClose}
+                        isLoading={loading}
+                      >
                         🔙 Cancel
                       </Button>
-                      <Button color="secondary" onPress={handleDeleteHaidNotes}>
+                      <Button
+                        color="secondary"
+                        onClick={handleDeleteHaidNotes}
+                        isLoading={loading}
+                      >
                         ❎ Delete
                       </Button>
                     </ModalFooter>

@@ -5,7 +5,7 @@ import { useAtom } from "jotai";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { textAtom } from "./atoms/haidNotes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const CreateHaidNotes = () => {
   const router = useRouter();
@@ -13,7 +13,17 @@ export const CreateHaidNotes = () => {
   const [suci, setSuci] = useState(0);
   const [haid_2, setHaidDua] = useState(0);
   const [keterangan, setKeterangan] = useAtom(textAtom);
+  const [canCreate, setCanCreate] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // jika salah satu input masih kosong, tidak dapat menekan tombol create
+  useEffect(() => {
+    if (haid_1 && suci && haid_2 && keterangan) {
+      setCanCreate(true);
+    } else {
+      setCanCreate(false);
+    }
+  }, [haid_1, suci, haid_2, keterangan]);
 
   async function handleCreateHaidNotes() {
     setLoading(true);
@@ -71,8 +81,9 @@ export const CreateHaidNotes = () => {
       <Button
         color="danger"
         isLoading={loading}
-        onPress={handleCreateHaidNotes}
-        className="w-full"
+        disabled={!canCreate}
+        onClick={handleCreateHaidNotes}
+        className="w-full hover:disabled:cursor-not-allowed hover:disabled:bg-opacity-60"
       >
         ✅ Create
       </Button>
